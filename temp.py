@@ -1,7 +1,25 @@
-s = int(input('Введите число: '))
-if s % 6 == 0:
-    k = int(s/3*2)
-    p = int((s - k)/2)
-    print(f'{s} -> {p}, {k}, {p}')
-else:
-    print(f'Со значением {s} данная задача не может быть решена в целых числах.')
+input_list = []
+list_len = int(input("Введите количество элементов в массиве: "))
+for _ in range(list_len-1):
+    input_list.append(int(input("Введите число: ")))
+for _ in range(1):
+    input_list.append(int(input("Введите число X: ")))
+print(input_list)
+x: int = input_list[list_len-1]
+
+input_list = set(input_list)
+# print(input_list)
+input_list = list(input_list)
+print(input_list)
+y: int
+for i in range(len(input_list)):
+    if x == input_list[i]:
+        if x - input_list[i-1] > input_list[i+1] - x:
+            y = input_list[i + 1]
+        elif x - input_list[i-1] < input_list[i+1] - x:
+            y = input_list[i - 1]
+    elif x == input_list[0]:
+        y = input_list[1]
+    elif x == input_list[len(input_list)-1]:
+        y = input_list[i-1]
+print(y)
