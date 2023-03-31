@@ -90,3 +90,9 @@ print(y)
 #
 # ноутбук
 #     12
+
+a_dict = {1: 'авеинорстaeioulnstr', 2: 'дклмпуdg', 3: 'бгёьяbcmp', 4: 'йыfhvwy', 5: 'жзхцчk', 8: 'шэюx', 10: 'фщъqz'}
+text = input("Введите слово: ")
+result = [key for words in text for key, value in a_dict.items() if words in value]
+print(result)
+print(sum(result))
