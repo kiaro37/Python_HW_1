@@ -38,3 +38,15 @@ print(input_list_3)
 # собирает ягоды с этого куста и с двух соседних с ним.
 # Напишите программу для нахождения максимального числа ягод, которое может собрать за один заход собирающий модуль,
 # находясь перед некоторым кустом заданной во входном файле грядки.
+
+bush = int(input("Введите количество кустов: "))
+berry_list = []
+for _ in range(bush):
+    berry_list.append(int(input("Введите количество ягод на кустах: ")))
+
+print(berry_list)
+berries = []
+for i in range(len(berry_list)-1):
+    berries.append(berry_list[i-1] + berry_list[i] + berry_list[i+1])
+berries.append(berry_list[-2] + berry_list[-1] + berry_list[0])
+print(max(berries))
