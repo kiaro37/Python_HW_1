@@ -14,6 +14,7 @@
 def f(words):
     return sum(1 for i in words if i in 'аеёиоуыэюя')
 
+
 str_stihi = input("Введите строку стихотворения: ")
 st = str_stihi.lower().split()
 t = f(st[0])
@@ -21,6 +22,7 @@ if all([f(i) == t for i in st]):
     print('Парам пам-пам')
 else:
     print('Пам парам')
+
 
 # Задача 36: Напишите функцию print_operation_table(operation, num_rows=6, num_columns=6),
 # которая принимает в качестве аргумента функцию, вычисляющую элемент по номеру строки и столбца.
@@ -40,3 +42,13 @@ else:
 # 4 8 12 16 20 24
 # 5 10 15 20 25 30
 # 6 12 18 24 30 36
+
+def print_operation_table(operation, num_rows, num_сolumns):
+    arr = [[operation(i, j) for i in range(1, num_rows + 1)] for j in range(1, num_сolumns + 1)]
+    for i in arr:
+        print(*[f"{x:>3}" for x in i])
+
+
+line = int(input("Введите количество строк: "))
+columns = int(input("Введите количество столбцов: "))
+print_operation_table(lambda x, y: x * y, line, columns)
